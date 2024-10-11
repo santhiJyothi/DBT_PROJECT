@@ -6,5 +6,15 @@ sources:
     tables:
       - name: STG_CUSTOMERS
       - name: STG_ORDERS
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+          - name: status
+            tests:
+              - accepted_values:
+                  values: ['Placed','completed','Replaced','Re-placed',returned','return_pending','shipped','placed']
       - name: STG_PAYMENTS
       - name: EMP
+      - name: Customers
