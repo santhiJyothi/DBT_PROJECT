@@ -1,0 +1,25 @@
+version: 2
+exposures:
+  - name: orders Weekly metrics
+    label: cust order payments documnetation
+    type: dashboard
+    maturity: high
+    description:  For more exposure about project documentation
+    
+    depends_on:
+      - ref('Payments')
+      - ref('customers')
+      - ref('final')
+      - ref('orders')
+      - ref('orders_append')
+      - ref('emp_macro')
+      - ref('orders_merge')
+      - ref('rowcount_macro')
+      - source('datafeed_shared_schema','STG_CUSTOMERS')
+      - source('datafeed_shared_schema','STG_ORDERS')
+      - source('datafeed_shared_schema','STG_PAYMENTS')
+           
+    owner:
+      name: Santhi
+      email: santhijyothikarri99@gmail.com
+      
